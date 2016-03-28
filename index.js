@@ -1,4 +1,4 @@
-export default class Sticky {
+export default class Affixed {
   constructor(options = {}) {
     this.isTicking = false;
     // merge options
