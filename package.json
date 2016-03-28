@@ -1,0 +1,42 @@
+{
+  "name": "affixed",
+  "description": "Make your containers affixed",
+  "version": "0.1.0",
+  "keywords": [
+    "affix",
+    "sticky",
+    "element",
+    "attach",
+    "dock"
+  ],
+  "contributors": [
+    {
+      "name": "Vu Tran",
+      "email": "vu@vu-tran.com",
+      "web": "http://vu-tran.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Vu Tran",
+      "email": "vu@vu-tran.com",
+      "web": "http://vu-tran.com"
+    }
+  ],
+  "bugs": {
+    "web": "https://github.com/vutran/sticky/issues"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:vutran/sticky.git"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "homepage": "https://github.com/vutran/sticky"
+}
