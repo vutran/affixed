@@ -5,7 +5,7 @@ export default class Affixed {
     const DEFAULTS = {
       element: null,
       offset: 0,
-      type: 'absolute',
+      position: 'absolute',
     };
     this.options = Object.assign({}, DEFAULTS, options);
     // retrieve the computer styles for the parent element
@@ -26,10 +26,10 @@ export default class Affixed {
         // if scrolled passed the given offset
         if (this.lastY > this.options.offset) {
           // apply the position
-          this.options.element.style.position = this.options.type;
+          this.options.element.style.position = this.options.position;
           this.options.element.style.width = '100%';
-          // re-position the element based on the type (fixed, or absolute)
-          switch (this.options.type) {
+          // re-position the element based on the position ("fixed", or "absolute")
+          switch (this.options.position) {
             case 'fixed':
               this.options.element.style.top = '0px';
               break;
