@@ -24,12 +24,12 @@
     }
   ],
   "bugs": {
-    "web": "https://github.com/vutran/sticky/issues"
+    "web": "https://github.com/vutran/affixed/issues"
   },
   "repositories": [
     {
       "type": "git",
-      "url": "git@github.com:vutran/sticky.git"
+      "url": "git@github.com:vutran/affixed.git"
     }
   ],
   "licenses": [
@@ -38,5 +38,5 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   ],
-  "homepage": "https://github.com/vutran/sticky"
+  "homepage": "https://github.com/vutran/affixed"
 }
