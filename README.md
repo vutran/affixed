@@ -1,4 +1,4 @@
-# Sticky
+# Affixed
 
 Make something stick on scroll
 
