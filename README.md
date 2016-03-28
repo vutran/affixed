@@ -5,7 +5,7 @@ Make something stick on scroll
 ## Usage
 
 ````js
-var menu = new Sticky({
+var menu = new Affixed({
   element: document.getElementById('sticky-menu'),
   offset: 70,
   type: 'absolute',
