@@ -5,7 +5,13 @@ Make something affix on scroll.
 ## Usage
 
 ````js
-var menu = new Affixed({
+// es6 imports
+import affixed from 'affixed';
+
+// commonjs
+// var affixed = require('affixed');
+
+var menu = new affixed({
   element: document.getElementById('sticky-menu'),
   offset: 70,
   position: 'fixed',
@@ -30,3 +36,15 @@ var menu = new Affixed({
 ### Notes
 
 `absolute` positioned element's are reposition on every scroll which may perform slow in some instances. You should set the `position` to `fixed` whenever possible. If your `element` is within a container that is positioned relative, you will need to set the `position` parameter to `absolute`.
+
+### Lint
+
+````bash
+$ npm run lint
+````
+
+### Build
+
+````bash
+$ npm run build
+````

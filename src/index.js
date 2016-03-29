@@ -1,16 +1,16 @@
-export default class Affixed {
+export default class affixed {
   constructor(options = {}) {
     this.isTicking = false;
     // merge options
     const DEFAULTS = {
       element: null,
       offset: 0,
-      position: 'absolute',
+      position: 'fixed',
     };
     this.options = Object.assign({}, DEFAULTS, options);
     // retrieve the computer styles for the parent element
     this.parentStyles = window.getComputedStyle(this.options.element.parentNode);
-    this.parentMarginBottom = parseInt(this.parentStyles.marginBottom, 10);
+    this.parentMarginOffset = parseInt(this.parentStyles.marginBottom, 10);
     // register window scroll event
     window.addEventListener('scroll', ::this.onWindowScroll);
   }
@@ -18,7 +18,7 @@ export default class Affixed {
   /**
    * Implemented with rAF (https://developer.mozilla.org/en-US/docs/Web/Events/scroll)
    */
-  onWindowScroll(e) {
+  onWindowScroll() {
     this.lastY = window.scrollY;
     if (!this.isTicking) {
       window.requestAnimationFrame(() => {
@@ -30,17 +30,29 @@ export default class Affixed {
           this.options.element.style.width = '100%';
           // re-position the element based on the position ("fixed", or "absolute")
           switch (this.options.position) {
+            default:
+              // no break
             case 'fixed':
               this.options.element.style.top = '0px';
               break;
             case 'absolute':
-              this.options.element.style.top = this.lastY + 'px';
-              this.options.element.parentNode.style.marginBottom = (this.parentMarginBottom + elementHeight) + 'px';
+              this.options.element.style.top = `${this.lastY}px`;
               break;
+          }
+          // update the parent node's margins to offset the affixed element
+          const newHeight = this.parentMarginOffset + elementHeight;
+          if (this.options.element.parentNode.nodeName.toLowerCase() === 'body') {
+            this.options.element.parentNode.style.marginTop = `${newHeight}px`;
+          } else {
+            this.options.element.parentNode.style.marginBottom = `${newHeight}px`;
           }
         } else {
           this.options.element.style.position = 'static';
-          this.options.element.parentNode.style.marginBottom = this.parentMarginBottom + 'px';
+          if (this.options.element.parentNode.nodeName.toLowerCase() === 'body') {
+            this.options.element.parentNode.style.marginTop = `${this.parentMarginOffset}px`;
+          } else {
+            this.options.element.parentNode.style.marginBottom = `${this.parentMarginOffset}px`;
+          }
         }
         // not ticking
         this.isTicking = false;
