@@ -1,5 +1,3 @@
-// fork of https://github.com/gaearon/react-transform-boilerplate/blob/master/webpack.config.dev.js
-
 const path = require('path');
 
 module.exports = {
