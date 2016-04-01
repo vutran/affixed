@@ -61,5 +61,8 @@
     "build": "npm run clean && npm run compile",
     "dev": "webpack-dev-server --content-base examples/ --config examples/webpack.config.js --inline --hot",
     "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "lodash": "^4.7.0"
   }
 }

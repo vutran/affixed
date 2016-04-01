@@ -15,6 +15,7 @@ var menu = new affixed({
   element: document.getElementById('sticky-menu'),
   offset: 70,
   position: 'fixed',
+  throttle: 10,
 });
 ````
 
@@ -32,6 +33,7 @@ var menu = new affixed({
 | `element` | The DOM element to affix. |
 | `offset` | Amount of pixels to scroll before the element is affixed. |
 | `position` | Either `absolute` or `fixed` positioning. |
+| `throttle` | Specify the milliseconds to throttle the position updates. |
 
 ### Notes
 
@@ -41,6 +43,12 @@ var menu = new affixed({
 
 ````bash
 $ npm run lint
+````
+
+### Dev
+
+````bash
+$ npm run dev
 ````
 
 ### Build
