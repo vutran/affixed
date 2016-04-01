@@ -1,7 +1,11 @@
+import EventEmitter from 'events';
 import { throttle } from 'lodash';
 
-export default class affixed {
+export default class affixed extends EventEmitter {
   constructor(options = {}) {
+    super();
+    // last event
+    this.lastEvent = null;
     // merge options
     const DEFAULTS = {
       element: null,
@@ -22,13 +26,17 @@ export default class affixed {
   }
 
   /**
-   * Implemented with rAF (https://developer.mozilla.org/en-US/docs/Web/Events/scroll)
+   * This callback is throttled by _.throttle
    */
   onWindowScroll() {
     this.lastY = window.scrollY;
     const elementHeight = this.options.element.clientHeight;
     // if scrolled passed the given offset
     if (this.lastY > this.options.offset) {
+      if (this.lastEvent !== 'affixed') {
+        this.emit('affixed', this);
+        this.lastEvent = 'affixed';
+      }
       if (this.options.position === 'mirror') {
         // display the mirror
         this.mirror.style.display = 'block';
@@ -57,6 +65,10 @@ export default class affixed {
         }
       }
     } else {
+      if (this.lastEvent !== 'unaffixed') {
+        this.emit('unaffixed', this);
+        this.lastEvent = 'unaffixed';
+      }
       // hide mirror
       if (this.options.position === 'mirror') {
         this.mirror.style.display = 'none';

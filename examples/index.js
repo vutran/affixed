@@ -7,3 +7,11 @@ const menu = new Affixed({
   position: 'mirror',
   throttle: 10,
 });
+
+menu.on('affixed', () => {
+  console.log('Menu is affixed.');
+});
+
+menu.on('unaffixed', () => {
+  console.log('Menu is unaffixed.');
+});
