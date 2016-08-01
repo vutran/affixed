@@ -1,10 +1,10 @@
 # Affixed
 
-Make something affix on scroll.
+> Make something affix on scroll.
 
 ## Usage
 
-````js
+```js
 // es6 imports
 import affixed from 'affixed';
 
@@ -17,13 +17,13 @@ var menu = new affixed({
   position: 'fixed',
   throttle: 10,
 });
-````
+```
 
-````html
+```html
 <div id="sticky-menu">
   ... content here
 </div>
-````
+```
 
 
 ### Parameters
@@ -43,18 +43,23 @@ You can also choose to use the `mirror` position option. A `mirror` will be crea
 
 ### Lint
 
-````bash
+```bash
 $ npm run lint
-````
+```
 
 ### Dev
 
-````bash
+```bash
 $ npm run dev
-````
+```
 
 ### Build
 
-````bash
+```bash
 $ npm run build
-````
+```
+
+## License
+
+MIT © [Vu Tran](https://github.com/vutran/)
+
