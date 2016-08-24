@@ -1,7 +1,7 @@
-import EventEmitter from 'events';
-import { throttle } from 'lodash';
+const EventEmitter = require('events');
+const throttle = require('lodash.throttle');
 
-export default class affixed extends EventEmitter {
+module.exports = class affixed extends EventEmitter {
   constructor(options = {}) {
     super();
     // last event
@@ -22,7 +22,8 @@ export default class affixed extends EventEmitter {
     this.parentStyles = window.getComputedStyle(this.options.element.parentNode);
     this.parentMarginOffset = parseInt(this.parentStyles.marginBottom, 10);
     // register window scroll event
-    window.addEventListener('scroll', throttle(::this.onWindowScroll, this.options.throttle));
+    // eslint-disable-next-line max-len
+    window.addEventListener('scroll', throttle(this.onWindowScroll.bind(this), this.options.throttle));
   }
 
   /**

@@ -1,5 +1,5 @@
 // es6 imports
-import Affixed from 'affixed';
+const Affixed = require('affixed');
 
 const menu = new Affixed({
   element: document.getElementById('sticky-menu'),
