@@ -1,3 +1,5 @@
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # Affixed
 
 > Make something affix on scroll.
@@ -62,4 +64,3 @@ $ npm run build
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran/)
-
