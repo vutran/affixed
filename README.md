@@ -1,3 +1,5 @@
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # Affixed
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -64,4 +66,3 @@ $ npm run build
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran/)
-
